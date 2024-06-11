@@ -26,5 +26,5 @@
 
 .idea
 
-/import
-/remove
+/import/*.csv
+/remove/*.csv
