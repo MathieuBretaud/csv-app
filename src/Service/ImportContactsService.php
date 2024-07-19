@@ -60,10 +60,15 @@ class ImportContactsService
             $contact = new Contact();
         }
         $contact->setEmail($arrayContact['EMAIL'])
-            ->setNom($arrayContact['NOM'])
-            ->setPrenom($arrayContact['PRENOM'])
-            ->setTelephone($arrayContact['TELEPHONE']);
-
+            ->setNom($arrayContact['NOM'] ?? '')
+            ->setPrenom($arrayContact['PRENOM'] ?? '')
+            ->setTelephone($arrayContact['TELEPHONE'] ?? $arrayContact['NUMERO_TEL'] ?? '')
+            ->setSms($arrayContact['SMS'] ?? '')
+            ->setAdresse($arrayContact['ADRESSE'] ?? '')
+            ->setEnseigneCommercial($arrayContact['ENSEIGNE_COMMERCIALE'] ?? '')
+            ->setVille($arrayContact['VILLE'] ?? '')
+            ->setCodePostal($arrayContact['CODE_POSTAL'] ?? '')
+        ;
         return $contact;
     }
 }

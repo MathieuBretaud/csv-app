@@ -13,7 +13,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class ImportContactsCommand extends Command
 {
     public function __construct(
-        private ImportContactsService $importContactsService,
+        private readonly ImportContactsService $importContactsService,
     )
     {
         parent::__construct();
